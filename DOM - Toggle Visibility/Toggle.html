@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle content</title>
+
+    <style>
+        #content {
+            display: none;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Toggle</button>
+
+    <div id="content">
+        <p>This is hidden content. click the buton to toggle its visibility</p>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const contentDiv = document.getElementById('content');
+
+        toggleButton.addEventListener('click', () => {
+            if (contentDiv.style.display == 'none') {
+                contentDiv.style.display = 'block';
+            } else {
+                contentDiv.style.display = 'none';
+            }
+            });
+    </script>
+</body>
+</html>

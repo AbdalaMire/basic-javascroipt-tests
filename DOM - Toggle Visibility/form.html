@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Aral, sans-serif;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Login</h1>
+    <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" required>
+    <br>
+    <input type="submit" value="Login">
+</form>
+<p class="error-message" id="errorMessage"></p>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        if (!usernameInput.value.trim() || !passwordInput.value.trim()) {
+            errorMessage.textContent = 'Please enter a username and password';
+        } else {
+            console.log('Username:', usernameInput.value);
+            console.log('Password:', passwordInput.value);
+            errorMessage.textContent = '';
+        }
+    });
+</script>
+</body>
+</html>

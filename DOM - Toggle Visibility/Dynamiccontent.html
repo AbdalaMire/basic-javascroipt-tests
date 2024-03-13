@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+</head>
+<body>
+    <div id="dynamicContent"></div>
+
+    <script>
+        // Get a reference to the div with ID "dynamicContent"
+        const dynamicDiv = document.getElementById('dynamicContent');
+
+        // Create an array of unique messages
+        const messages = [
+            "Hello, world!",
+            "Welcome to this dynamic content example.",
+            "Feel free to explore the generated paragraphs.",
+            "JavaScript makes it easy to manipulate the DOM.",
+            "Have a great day!"
+        ];
+
+        // Create and append five paragraph elements
+        for (let i = 0; i < messages.length; i++) {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = messages[i];
+            dynamicDiv.appendChild(paragraph);
+        }
+    </script>
+</body>
+</html>
